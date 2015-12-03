@@ -1,0 +1,155 @@
+body {
+  background-color: #b0c4de;
+  background: url() no-repeat 50% 50% fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+.pagePortal {
+  width: 1100px;
+  overflow: auto;
+  clear: both;
+  margin: 0 auto;
+  background-color: #D9E4E6;
+  padding-bottom: 20px;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0px auto;
+}
+
+header {
+  height:140px;
+  background: #FFF;
+  width:1100px;
+  margin:0px auto;
+  font-family: 'Alice', serif;
+  font-size: 1.4em;
+  color: #8B8D8D;
+}
+
+.moveLogo {
+  margin: 0 0 0 35px;
+
+}
+
+.moveNavBar {
+  transform: translate(0%,80%);
+}
+
+a {
+  color: #8B8D8D;
+}
+
+/* mouse over link */
+a:hover {
+    color: #666666;
+}
+
+/* selected link */
+a:active {
+    color: #666666;
+}
+
+
+footer {
+  height: 200px;
+  width:1100px;
+  margin:0px auto;
+   background: blue url() no-repeat top center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #FFF;
+}
+
+.footerLightText {
+  opacity: 0.5;
+}
+
+/* footer link */
+.footerLink {
+  color: #FDFDFD;
+}
+
+/* footer link */
+.footerLink:hover {
+    color: #FDFDFD;
+}
+
+/* footer link */
+.footerLink:active {
+    color: #FDFDFD;
+}
+
+.textAlignLeft {
+  text-align: left;
+}
+
+.footerMargin {
+  margin: 40px 0px 0px 0px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.navbar-text {
+    float: none;
+}
+
+/**** ui bootstrap calendar styles ****/
+
+/**** size of calendar ****/
+.my-datepicker .btn {
+    padding: 12px 12px;
+    font-size: 1.2em;
+}
+
+/**** Event Highlight ****/
+.full button span {
+    background-color: green;
+    color: black;
+    padding: 15px 10px;
+    border-radius: 5px;
+  }
+
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }
+
+/**** Current Day Select ****/
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
+    color: #fff;
+    background-color: #39B9D7;
+    border-color: grey;
+}
+
+button {
+     background-color: green;
+    color: black;
+    padding: 10px 20px 10px 20px;
+}
+
+/**** Time Select CSS ****/
+select {
+ margin: 5px;
+ /*width: 10%;*/
+ font-size: 1.2em;
+}
+
+/**** Enable use of ng-cloak to hide brackets {{}} on page load ****/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+ }
