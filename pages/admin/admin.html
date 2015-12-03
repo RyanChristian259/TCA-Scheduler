@@ -1,0 +1,38 @@
+<h2>Admin</h2>
+
+<p><a href='#/'>Home  </a> <a href='#/accountInfo'>&nbsp;&nbsp;&nbsp;  My Account</a></p>
+
+
+
+        <button ng-click="addChild = !addChild" class="btn btn-success">Add Child</button>
+        <div class="container">
+          <div class="container" ng-hide="addChild">
+            <div class="row">
+              <div class="col-sm-4">
+                <form name="addChild" novalidate >
+                  <div class="form-group">
+                  </br>
+                  <input type="text" class="form-control" placeholder="Name" ng-model="child.name" required>
+                </div>
+                <div class="form-group">
+                <!-- Datepicker starts -->
+                  <div ng-controller='datePickerController'>
+
+                    <div class="row">
+                     <div class="col-md-6">
+                      <div class="calendar">
+                        <p class="input-group">
+                          <input type="text" uib-datepicker-popup="{{format}}" ng-change='changeDate()' class='my-datepicker form-control' ng-model="dt" min-date="minDate" max-date="maxDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)" is-open="status.opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- DatePicker End -->
+                <!-- <input type="date" class="form-control" placeholder="Birthdate" ng-model="child.birthdate" required> -->
+              </div>
+
+              <button ng-click='createEvent()' type="submit" ng-mouseup="addChild = !addChild" class="btn btn-default">Submit</button>

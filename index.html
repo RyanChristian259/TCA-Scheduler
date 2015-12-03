@@ -1,10 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='tcaScheduler'>
 
 <head>
   <meta charset="UTF-8">
-  <title>TCA Scheduler</title>
+  <title>TCA Event</title>
+
+
+
+  <!-- CSS -->
+  <!-- load Bootstrap and custom style.css -->
+  <link rel="stylesheet" href="./bower_components/bootstrap-css/css/bootstrap.css" />
+  <!-- <link rel="stylesheet" href="./bower_components/fullcalendar/dist/fullcalendar.css"> -->
+  <!-- <link rel="stylesheet" href="css/calendarCSS.css"> -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+
+<body ng-controller='authController'>
+
+
+  <header>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand moveLogo" href="">TCA Logo<img src="" alt="TCA Scheduler Logo Here" ></a>
+  </div>
+  <nav>
+    <div class="collapse navbar-collapse moveNavBar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/aboutus/">About Us</a></li>
+        <li ng-show='!authData'><a href="#/login">Log in</a></li>
+        <li ng-show='authData'><a href='' ng-click='logoutUser()'>Log out</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class='pagePortal'>
+  <p ng-cloak ng-show='authData' style='text-align: right'>Hello {{greetUser}}&nbsp;&nbsp;&nbsp;</p>
+
+
+  <div class='container'>
+
+    <div ng-view></div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer">
+    <div class="small navbar-text text-center">
+      <div class='col-md-12 textAlignLeft footerMargin'>
+        <h5>TCA Scheduler</h5>
+    </div>
+  </div>
+</div>
+</footer>
+
+<div><!-- Page Portal -->
+
+<!-- JS -->
+<!-- load Angular, Firebase, Firebase Angular Library, and custom app.js -->
+<script src="./bower_components/jquery/dist/jquery.js"></script>
+<script src="./bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+
+<script type="text/javascript" src="./bower_components/angular-ui-calendar/src/calendar.js"></script>
+<script type="text/javascript" src="./bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+<script type="text/javascript" src="./bower_components/fullcalendar/dist/gcal.js"></script>
+<script type='text/javascript' src="js/controllers/module.js"></script>
+<script type='text/javascript' src="js/controllers/accountInfoController.js"></script>
+<script type='text/javascript' src="js/controllers/mainController.js"></script>
+<script type='text/javascript' src="js/controllers/datePickerController.js"></script>
+
+<script type='text/javascript' src="js/controllers/authController.js"></script>
+<script type='text/javascript' src="js/services/userService.js"></script>
+<script type='text/javascript' src="js/services/authService.js"></script>
+
+<script type='text/javascript' src="js/router.js"></script>
 </body>
+
 </html>
