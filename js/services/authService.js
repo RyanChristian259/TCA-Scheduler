@@ -4,8 +4,6 @@ app.service('authService', ['$q', '$timeout', '$http',
 
     var ref = new Firebase("https://tca-scheduler.firebaseio.com/");
 
-    var userKey = 'no key yet';
-
     var usersCollection = ref.child("users");
 
     function isLoggedIn(authData) {
