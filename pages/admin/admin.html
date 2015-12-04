@@ -2,37 +2,49 @@
 
 <p><a href='#/'>Home  </a> <a href='#/accountInfo'>&nbsp;&nbsp;&nbsp;  My Account</a></p>
 
+<button ng-click="addEvent = !addEvent" class="btn btn-success">Create An Event</button>
+<div class="container">
+  <div class="container" ng-hide="addEvent">
+    <div class="row">
+      <div class="col-sm-4">
+        <form name="addEvent" novalidate >
+          <div class="form-group">
+          </br>
+          <input type="text" class="form-control" placeholder="Event Name" ng-model="eventName" required>
+          <input type="text" class="form-control" placeholder="Who is the event for" ng-model="eventWho" required>
+          <input type="text" class="form-control" placeholder="Location" ng-model="eventLocation" required>
+        </div>
+        <div class="form-group">
+          <!-- Datepicker starts -->
+          <div ng-controller='datePickerController'>
 
-
-        <button ng-click="addUser = !addUser" class="btn btn-success">Add An Event</button>
-        <div class="container">
-          <div class="container" ng-hide="addUser">
             <div class="row">
-              <div class="col-sm-4">
-                <form name="addUser" novalidate >
-                  <div class="form-group">
-                  </br>
-                  <input type="text" class="form-control" placeholder="Name" ng-model="User.name" required>
-                </div>
-                <div class="form-group">
-                <!-- Datepicker starts -->
-                  <div ng-controller='datePickerController'>
-
-                    <div class="row">
-                     <div class="col-md-6">
-                      <div class="calendar">
-                        <p class="input-group">
-                          <input type="text" uib-datepicker-popup="{{format}}" ng-change='changeDate()' class='my-datepicker form-control' ng-model="dt" min-date="minDate" max-date="maxDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)" is-open="status.opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                          </span>
-
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- DatePicker End -->
-
+             <div class="col-md-6">
+              <div class="calendar">
+                <p class="input-group">
+                  <input type="text" uib-datepicker-popup="{{format}}" ng-change='changeDate()' class='my-datepicker form-control' ng-model="dt" min-date="minDate" max-date="maxDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)" is-open="status.opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                  </span>
+                </p>
               </div>
+            </div>
+          </div>
+        </div><!-- DatePicker End -->
 
-              <button ng-click='createEvent()' type="submit" ng-mouseup="addUser = !addUser" class="btn btn-default">Submit</button>
+      </div>
+      <button ng-click="showConfirm = !showConfirm;" ng-disabled='selectedName === null' ng-show='!showConfirm' class="btn btn-sm btn-success" type='submit'>Schedule</button>
+
+
+      <h3 ng-show='resConfirm' class='show-hide'>Your Event has been saved</h3>
+
+      <div ng-hide="!showConfirm">
+        <div class="btn-group" role="group">
+          <button class="btn btn-sm btn-danger" ng-mouseup="showConfirm = !showConfirm" ng-disabled='selectedName === null'>Cancel</button>
+          <button class="btn btn-sm btn-success" ng-mouseup="showConfirm = !showConfirm" ng-disabled='selectedName === null' ng-click="createEvent(); showUserConfirm()">Submit</button>
+        </div ></div><!-- ng hide show Confirm --></h4></div></form>
+
+    <h4 ng-repeat='event in events track by $index'>Name: {{event.name}} </br>Date: {{event.date}} </br>Location: {{event.location}} </br>Who: {{event.who}}</h4>
+</div>
+</div>
+</div>

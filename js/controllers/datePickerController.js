@@ -51,30 +51,25 @@ $scope.status = {
 //**************************************//
 // Set current date as default on page load
 var cleanDate = moment($scope.dt).format('YYYY-MM-DD');
-  userService.currentDate = cleanDate;
+  userService.currentSelectedDate = cleanDate;
   var payload = {
-    'timeStamp': userService.currentDate
+    'timeStamp': userService.currentSelectedDate
   };
   $scope.payload = payload;
 
 //Change date when selected from picker
 $scope.changeDate = function() {
   var cleanDate = moment($scope.dt).format('YYYY-MM-DD');
-  userService.currentDate = cleanDate;
+  userService.currentSelectedDate = cleanDate;
   var payload = {
-    'timeStamp': userService.currentDate
+    'timeStamp': userService.currentSelectedDate
   };
   $scope.payload = payload;
 };
-
-
 
 var tomorrow = new Date();
 tomorrow.setDate(tomorrow.getDate() + 1);
 var afterTomorrow = new Date();
 afterTomorrow.setDate(tomorrow.getDate() + 2);
-
-
-
 
 }]); //calendar controller

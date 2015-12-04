@@ -8,4 +8,6 @@ app.service('userService', ['$q', '$timeout', '$http',
 
     var currentUserKey = 'nothing yet';
 
+    var currentSelectedDate = 'No Date';
+
 }]); //end Service

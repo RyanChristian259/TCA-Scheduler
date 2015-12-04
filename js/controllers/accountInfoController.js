@@ -75,9 +75,6 @@ $scope.userCallback = function () {
       authService.userKey = $scope.key;
     }
   });
-  // $scope.populateUserKids();
-  // $scope.populateUserKidsAge();
-  // $scope.populateUserEvents();
   $scope.userInfo();
   console.log(authService.userKey, ' auth service user key');
 });
