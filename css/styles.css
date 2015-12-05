@@ -16,7 +16,7 @@ p {
   overflow: auto;
   clear: both;
   margin: 0 auto;
-  background-color: #D9E4E6;
+  background-color: #FDFDFD;
   padding-bottom: 20px;
 }
 
@@ -27,8 +27,8 @@ p {
 
 header {
   height:140px;
-  background: #FFF;
-  width:1100px;
+  background: #242526;
+  width:100%;
   margin:0px auto;
   font-family: 'Alice', serif;
   font-size: 1.4em;
@@ -36,12 +36,13 @@ header {
 }
 
 .moveLogo {
-  margin: 0 0 0 35px;
-
+  margin: 0 0 0 10%;
+  width: 250px;
 }
 
 .moveNavBar {
   transform: translate(0%,80%);
+  margin: 0 10% 0 0;
 }
 
 a {
@@ -58,12 +59,16 @@ a:active {
     color: #666666;
 }
 
+.moveGreetUser{
+   transform: translate(0%,80%);
+  margin: 20px 10% 0 0;
+}
 
 footer {
   height: 200px;
-  width:1100px;
+  width:100%;
   margin:0px auto;
-   background: blue url() no-repeat top center;
+   background: #0F1723 url() no-repeat top center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
