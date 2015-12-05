@@ -1,4 +1,4 @@
-app.controller('mainController', ['$scope', '$http', '$location', '$firebase', '$route', '$routeParams', '$firebaseArray', '$firebaseObject', 'userService', 'authService', '$timeout','$window', function($scope, $http, $location, $firebase, $route, $routeParams, $firebaseArray, $firebaseObject, userService, authService, $timeout, $window) {
+app.controller('mainController', ['$scope', '$http', '$location', '$firebase', '$route', '$routeParams', '$firebaseArray', '$firebaseObject', 'userService', 'authService', '$timeout', '$window', function($scope, $http, $location, $firebase, $route, $routeParams, $firebaseArray, $firebaseObject, userService, authService, $timeout, $window) {
 
   var ref = new Firebase("https://tca-scheduler.firebaseio.com/");
 
@@ -62,7 +62,9 @@ $scope.populateEvents = function(){
     for(var key in eventsInfo){
       events.push(eventsInfo[key]);
       }
+      $scope.$apply(function () {
       $scope.events = events;
+        });
       events = [];
         console.log($scope.events, ' events info key');
   }, function (errorObject) {
